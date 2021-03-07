@@ -22,3 +22,12 @@ class Box:
             for num in self.decided_nums:
                 if num in cell.available:
                     cell.available.remove(num)
+
+        for i in range(9):
+            if i not in self.decided_nums:
+                possible_cells = []
+                for cell in self.cells:
+                    if not cell.finished and i in cell.available:
+                        possible_cells.append(cell)
+                if len(possible_cells) == 1:
+                    possible_cells[0].available = [i]

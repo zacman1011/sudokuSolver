@@ -40,9 +40,9 @@ class Board:
         self.boxes.append(Box([self.whole_board[3], self.whole_board[4], self.whole_board[5],
                                self.whole_board[12], self.whole_board[13], self.whole_board[14],
                                self.whole_board[21], self.whole_board[22], self.whole_board[23]]))  # box TM
-        self.boxes.append(Box([self.whole_board[30], self.whole_board[4], self.whole_board[5],
-                               self.whole_board[39], self.whole_board[13], self.whole_board[14],
-                               self.whole_board[48], self.whole_board[22], self.whole_board[23]]))  # box MM
+        self.boxes.append(Box([self.whole_board[30], self.whole_board[31], self.whole_board[32],
+                               self.whole_board[39], self.whole_board[40], self.whole_board[41],
+                               self.whole_board[48], self.whole_board[49], self.whole_board[50]]))  # box MM
         self.boxes.append(Box([self.whole_board[57], self.whole_board[58], self.whole_board[59],
                                self.whole_board[66], self.whole_board[67], self.whole_board[68],
                                self.whole_board[75], self.whole_board[76], self.whole_board[77]]))  # box BM
@@ -69,7 +69,7 @@ class Board:
 
         finished = True
         for cell in self.whole_board:
-            finished = finished and cell.step()
+            finished = cell.step() and finished
         self.finished = finished
 
     def __str__(self):
