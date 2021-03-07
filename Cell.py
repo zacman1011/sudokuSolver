@@ -17,6 +17,7 @@ class Cell:
             if len(self.available) == 1:
                 self.num = self.available[0]
                 self.finished = True
+        return self.finished
 
     def __str__(self):
         return str(self.num)
